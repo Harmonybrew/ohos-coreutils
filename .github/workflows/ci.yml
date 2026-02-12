@@ -21,9 +21,9 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
-          path: ${{ github.workspace }}/coreutils-9.9-ohos-arm64.tar.gz
+          path: ${{ github.workspace }}/coreutils-9.10-ohos-arm64.tar.gz
       - name: Upload release asset
         uses: softprops/action-gh-release@v2
         if: github.event_name == 'release'
         with:
-          files: ${{ github.workspace }}/coreutils-9.9-ohos-arm64.tar.gz
+          files: ${{ github.workspace }}/coreutils-9.10-ohos-arm64.tar.gz

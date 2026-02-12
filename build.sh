@@ -6,9 +6,9 @@ WORKDIR=$(pwd)
 
 # 如果存在旧的目录和文件，就清理掉
 rm -rf *.tar.gz \
-    coreutils-9.9 \
+    coreutils-9.10 \
     ohos-sdk \
-    coreutils-9.9-ohos-arm64
+    coreutils-9.10-ohos-arm64
 
 # 准备 ohos-sdk
 mkdir ohos-sdk
@@ -34,9 +34,9 @@ export CFLAGS="-D__MUSL__=1"
 export CXXFLAGS="-D__MUSL__=1"
 
 # 准备源码
-curl -L -O https://mirrors.ustc.edu.cn/gnu/coreutils/coreutils-9.9.tar.gz
-tar -zxf coreutils-9.9.tar.gz
-cd coreutils-9.9
+curl -fSLO https://ftp.gnu.org/gnu/coreutils/coreutils-9.10.tar.gz
+tar -zxf coreutils-9.10.tar.gz
+cd coreutils-9.10
 
 # 打个小补丁。这是为了让 gnulib 支持 ohos 平台。
 # 相关参考资料：
@@ -45,14 +45,14 @@ cd coreutils-9.9
 patch -p1 < ../0001-port-gnulib-to-ohos.patch
 
 # 编译 coreutils
-./configure --prefix=${WORKDIR}/coreutils-9.9-ohos-arm64 --host=aarch64-linux gl_cv_func_pthread_rwlock_init=no
+./configure --prefix=${WORKDIR}/coreutils-9.10-ohos-arm64 --host=aarch64-linux-musl --enable-no-install-program=date
 make -j$(nproc)
 make install
 cd ..
 
 # 履行开源义务，将 license 随制品一起发布
-cp coreutils-9.9/COPYING coreutils-9.9-ohos-arm64/
-cp coreutils-9.9/AUTHORS coreutils-9.9-ohos-arm64/
+cp coreutils-9.10/COPYING coreutils-9.10-ohos-arm64/
+cp coreutils-9.10/AUTHORS coreutils-9.10-ohos-arm64/
 
 # 打包最终产物
-tar -zcf coreutils-9.9-ohos-arm64.tar.gz coreutils-9.9-ohos-arm64
+tar -zcf coreutils-9.10-ohos-arm64.tar.gz coreutils-9.10-ohos-arm64

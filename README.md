@@ -19,12 +19,12 @@
 
 示例：
 ```sh
-hdc file send coreutils-9.9-ohos-arm64.tar.gz /data
+hdc file send coreutils-9.10-ohos-arm64.tar.gz /data
 hdc shell
 
 cd /data
-tar -zxf coreutils-9.9-ohos-arm64.tar.gz
-export PATH=/data/coreutils-9.9-ohos-arm64/bin:$PATH
+tar -zxf coreutils-9.10-ohos-arm64.tar.gz
+export PATH=/data/coreutils-9.10-ohos-arm64/bin:$PATH
 
 # 现在可以使用 coreutils 里面的 tr、expr 等命令了
 ```
@@ -41,9 +41,9 @@ docker run -itd --name=ohos ghcr.io/hqzing/docker-mini-openharmony:latest
 docker exec -it ohos sh
 
 cd /root
-curl -L -O https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.9/coreutils-9.9-ohos-arm64.tar.gz
-tar -zxf coreutils-9.9-ohos-arm64.tar.gz -C /opt
-export PATH=/opt/coreutils-9.9-ohos-arm64/bin:$PATH
+curl -L -O https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.10/coreutils-9.10-ohos-arm64.tar.gz
+tar -zxf coreutils-9.10-ohos-arm64.tar.gz -C /opt
+export PATH=/opt/coreutils-9.10-ohos-arm64/bin:$PATH
 
 # 现在可以使用 coreutils 里面的 tr、expr 等命令了
 ```
