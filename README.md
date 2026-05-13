@@ -16,9 +16,9 @@
 示例：
 ```sh
 cd ~
-curl -fLO https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.10/coreutils-9.10-ohos-arm64.tar.gz
-tar -zxf coreutils-9.10-ohos-arm64.tar.gz
-export PATH=~/coreutils-9.10-ohos-arm64/bin:$PATH
+curl -fLO https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.11/coreutils-9.11-ohos-arm64.tar.gz
+tar -zxf coreutils-9.11-ohos-arm64.tar.gz
+export PATH=~/coreutils-9.11-ohos-arm64/bin:$PATH
 
 # 现在可以使用 coreutils 里面的 tr、expr 等命令了
 ```
@@ -29,12 +29,12 @@ export PATH=~/coreutils-9.10-ohos-arm64/bin:$PATH
 
 示例：
 ```sh
-hdc file send coreutils-9.10-ohos-arm64.tar.gz /data
+hdc file send coreutils-9.11-ohos-arm64.tar.gz /data
 hdc shell
 
 cd /data
-tar -zxf coreutils-9.10-ohos-arm64.tar.gz
-export PATH=/data/coreutils-9.10-ohos-arm64/bin:$PATH
+tar -zxf coreutils-9.11-ohos-arm64.tar.gz
+export PATH=/data/coreutils-9.11-ohos-arm64/bin:$PATH
 
 # 现在可以使用 coreutils 里面的 tr、expr 等命令了
 ```
@@ -46,9 +46,9 @@ export PATH=/data/coreutils-9.10-ohos-arm64/bin:$PATH
 示例：
 ```sh
 cd /opt
-curl -fLO https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.10/coreutils-9.10-ohos-arm64.tar.gz
-tar -zxf coreutils-9.10-ohos-arm64.tar.gz
-export PATH=/opt/coreutils-9.10-ohos-arm64/bin:$PATH
+curl -fLO https://github.com/Harmonybrew/ohos-coreutils/releases/download/9.11/coreutils-9.11-ohos-arm64.tar.gz
+tar -zxf coreutils-9.11-ohos-arm64.tar.gz
+export PATH=/opt/coreutils-9.11-ohos-arm64/bin:$PATH
 
 # 现在可以使用 coreutils 里面的 tr、expr 等命令了
 ```
