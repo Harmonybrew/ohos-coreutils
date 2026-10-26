@@ -7,15 +7,12 @@ WORKDIR=$(pwd)
 # 如果存在旧的目录和文件，就清理掉
 rm -rf *.tar.gz \
     ohos-sdk \
-    daily_build.log \
-    manifest_tag.xml \
     coreutils-9.11 \
     coreutils-9.11-ohos-arm64
 
 # 准备 ohos-sdk
-curl -fL -o ohos-sdk-full_6.1-Release.tar.gz https://cidownload.openharmony.cn/version/Master_Version/OpenHarmony_6.1.0.31/20260311_020435/version-Master_Version-OpenHarmony_6.1.0.31-20260311_020435-ohos-sdk-full_6.1-Release.tar.gz
-tar -zxf ohos-sdk-full_6.1-Release.tar.gz
-rm -rf ohos-sdk-full_6.1-Release.tar.gz ohos-sdk/windows ohos-sdk/ohos
+curl -fL -o ohos-sdk.tar.gz https://repo.huaweicloud.com/openharmony/os/7.0-Release/ohos-sdk-windows_linux-public_20260829.tar.gz
+tar -zxf ohos-sdk.tar.gz -C ./ ohos-sdk/linux
 cd ohos-sdk/linux
 unzip -q native-*.zip
 unzip -q toolchains-*.zip
